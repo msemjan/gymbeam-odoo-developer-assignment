@@ -1,0 +1,39 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    desc: Default command
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  up:
+    desc: Spin up all the containers
+    cmds:
+      - sudo docker-compose up -d
+    silent: true
+  
+  down:
+    desc: Stop and delete all the containers
+    cmds:
+      - sudo docker-compose down
+    silent: true
+
+  reup:
+    desc: Restarts all containers
+    cmds:
+      - sudo docker-compose down
+      - sudo docker-compose up -d
+    silent: true
+
+  fmt:
+    desc: Format code Oddo addon Python code
+    dir: ./addons/
+    cmds:
+      - python -m black .
+    silent: true

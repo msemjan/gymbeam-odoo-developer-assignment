@@ -1,0 +1,25 @@
+services:
+  odoo:
+    container_name: odoo
+    build: .
+    # image: odoo:16
+    env_file: .env
+    command: ["odoo", "-c", "/etc/odoo/odoo.conf"]
+    depends_on:
+      - postgres
+    ports:
+      - "8069:8069"
+    volumes:
+      - data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons
+      - ./config:/etc/odoo
+  postgres:
+    container_name: postgres 
+    image: postgres:15
+    env_file: .env
+    volumes:
+      - db:/var/lib/postgresql/data/pgdata
+
+volumes:
+  data:
+  db:
