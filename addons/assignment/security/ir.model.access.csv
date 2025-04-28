@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_custom_fields,access.hr.employee.custom.fields,model_hr_employee,base.group_user,1,1,1,1
+access_wizard_send_email,access.wizard.send.email,model_wizard_send_email,base.group_user,1,1,1,1

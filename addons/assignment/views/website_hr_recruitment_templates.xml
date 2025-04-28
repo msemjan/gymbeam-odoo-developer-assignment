@@ -1,0 +1,30 @@
+<odoo>
+    <template 
+      id="website_hr_recruitment_apply_inherit" 
+      inherit_id="website_hr_recruitment.apply" 
+      name="Recruitment Form Validation"
+    >
+        <xpath expr="//form" position="attributes">
+            <attribute name="id">recruitment_form</attribute>
+        </xpath>
+
+        <!-- Translatable Input form -->
+        <xpath expr="//input[@type='file']" position="replace">
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="cv" id="cv_upload" required="required"/>
+                <label class="custom-file-label" for="cv_upload">
+                    <!-- Render text, but mark it for translation -->
+                    <t t-esc="'Choose file'" t-options="{'widget': 'translation'}"/>
+                </label>
+            </div>
+        </xpath>
+
+        <!-- Box for error message in case the form is filled incorrectly -->
+        <xpath expr="//form" position="inside">
+            <div id="form_error" class="alert alert-danger d-none" role="alert">
+                Please fill the form correctly
+            </div>
+        </xpath>
+        
+    </template>
+</odoo>

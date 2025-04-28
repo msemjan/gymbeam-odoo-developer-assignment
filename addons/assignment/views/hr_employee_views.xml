@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_inherit_assignment" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.assignment</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert after work_email -->
+            <xpath expr="//field[@name='work_email']" position="after">
+                <group>
+                    <field name="i_love_gb"/>
+                    <field name="employee_contacts"
+                           attrs="{'invisible': [('i_love_gb', '=', False)]}"
+                           filename="employee_contacts_filename"/>
+                    <field name="salary"/>
+                    <field name="tax"/>
+                    <field name="total_salary" readonly="1"/>
+
+                    <field name="special_phone"/>
+                    <field name="employee_number"/>
+                    <button name="open_send_email_wizard"
+                            type="object"
+                            string="Send Emails"
+                            class="btn-primary"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

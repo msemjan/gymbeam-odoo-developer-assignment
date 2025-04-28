@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_wizard_send_email_form" model="ir.ui.view">
+    <field name="name">wizard.send.email.form</field>
+    <field name="model">wizard.send.email</field>
+    <field name="arch" type="xml">
+      <form string="Send Emails Wizard" enctype="multipart/form-data">
+        <group>
+          <field name="upload_file" required="1"/>
+          <field name="filename" readonly="1"/>
+        </group>
+
+        <footer>
+          <button string="Send Emails" type="object" name="send_emails" class="btn-primary"/>
+          <button string="Cancel" class="btn-secondary" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <!-- OPTIONAL: Add an action to open the wizard from the menu -->
+  <record id="action_open_send_email_wizard" model="ir.actions.act_window">
+    <field name="name">Send Emails</field>
+    <field name="res_model">wizard.send.email</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field> <!-- open as a modal popup -->
+  </record>
+
+  <!-- OPTIONAL: Add a menu item (under a custom menu if you have one) -->
+  <menuitem id="menu_send_emails_wizard"
+            name="Send Emails"
+            parent="hr.menu_hr_root"
+            action="action_open_send_email_wizard"
+            sequence="100"/>
+</odoo>
