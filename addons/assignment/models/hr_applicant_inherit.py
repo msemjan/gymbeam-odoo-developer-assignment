@@ -13,10 +13,10 @@ class HrApplicant(models.Model):
     )
 
     gender = fields.Selection(
-        [('male', 'Male'), ('female', 'Female'), ('other', 'Other')],
+        [("male", "Male"), ("female", "Female"), ("other", "Other")],
         string="Gender",
         tracking=True,
-        default='other',
+        default="other",
     )
 
     @api.model

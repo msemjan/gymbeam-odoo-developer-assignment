@@ -37,9 +37,9 @@ tasks:
     cmds:
       - python -m black .
     silent: true
-
-  curl:
+  
+  post:
     desc: Make a POST request with test payload on the "localhost:8069/case_study/applicant/get" REST API endpoint
     cmds:
-      - curl -XPOST http://localhost:8069/case_study/applicant/get -H "Content-Type: application/json" -d @test_payload.json
+      - "curl -XPOST http://localhost:8069/case_study/applicant/get -H \"Content-Type: application/json\" -d @test_payload.json"
     silent: true

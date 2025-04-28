@@ -127,7 +127,7 @@ You will need:
 Example (you may need to update the `id` field in the `test_payload.json`):
 
 ```bash
-go-task curl
+go-task post 
 ```
 
 Or manually:
@@ -155,7 +155,7 @@ curl -X POST http://localhost:8069/case_study/applicant/get \
 | Stop containers | `go-task down` |
 | Restart containers | `go-task reup` |
 | Format Python code | `go-task fmt` |
-| Test API call | `go-task curl` |
+| Test API call | `go-task post` |
 
 ---
 
