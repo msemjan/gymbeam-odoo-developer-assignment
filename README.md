@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
-- [Running Odoo](#running-odoo)
+- [Running Odoo](#setup)
 - [Features Implemented](#features-implemented)
 - [Customizations Overview](#customizations-overview)
 - [Usage](#usage)
