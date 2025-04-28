@@ -1,0 +1,20 @@
+{
+  "candidates": [
+    {
+      "id": 12345,
+      "title": "Ing",
+      "firstname": "John",
+      "surname": "Doe",
+      "phone": "132456789",
+      "email": "applicant@odoo.com",
+      "isActive": 1,
+      "gender": "male",
+      "job": {
+        "id": "17756290-60ac-49ae-88fa-a60f16fb5960",
+        "title": "Job title",
+        "addDate": "2021-05-11",
+        "stateId": 1
+      }
+    }
+  ]
+}
